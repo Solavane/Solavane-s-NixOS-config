@@ -40,6 +40,7 @@
   programs.git.enable = true;
 
   services.ntp.enable = true;
+  services.gvfs.enable = true;
 
   # -------------------------------------------------------
   # User shell
