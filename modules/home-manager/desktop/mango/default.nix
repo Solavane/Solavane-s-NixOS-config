@@ -26,7 +26,7 @@ in
 
       # Trackpad
       trackpad_accel_profile = 2
-      trackpad_accel_speed = 1
+      trackpad_accel_speed = 0.7
 
       # System
       #syncobj_enable = 1
@@ -111,8 +111,8 @@ in
 
       # Custom app bind
       bind=SUPER,Return,spawn,foot
-      bind=SUPER,b,spawn,foot elinks
-      bind=SUPER+CTRL,b,spawn,elinks
+      bind=SUPER,b,spawn,librewolf
+      bind=SUPER+CTRL,b,spawn,foot elinks
       bind=SUPER+SHIFT,d,spawn,vesktop
     '';
 
