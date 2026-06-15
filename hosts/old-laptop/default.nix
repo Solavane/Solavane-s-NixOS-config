@@ -1,0 +1,41 @@
+{ config, lib, pkgs, ... }: {
+  imports = [
+    ../shared/default.nix
+    ../../users/solavane/default.nix
+    ./hardware-configuration.nix
+    ./system-configuration.nix
+  ];
+
+  home-manager.users.solavane = import ../../users/solavane/home.nix;
+
+  networking.hostName = "old-laptop";
+
+  nixconf = { #Module imports
+    isDesktop = true;
+    
+    desktop = {
+
+      mango = {
+        enable = true;
+        monitors = [
+          "make:AU Optronics, width:1366, height:768, refresh:60, x:0, y:0"
+        ];
+      };
+
+      dms.enable = true;
+      #wallpaperTheming.enable = true;
+
+    };
+
+
+    programs = {
+
+      foot.enable = true;
+      pcmanfm.enable = true;
+      librewolf.enable = true;
+      elinks.enable = true;
+      keepass.enable = true;
+      
+    };
+  };
+}

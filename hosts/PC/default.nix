@@ -1,0 +1,45 @@
+{ config, lib, pkgs, ... }: {
+  imports = [
+    ../shared/default.nix
+    ../../users/solavane/default.nix
+    ./hardware-configuration.nix
+    ./system-configuration.nix
+  ];
+
+  home-manager.users.solavane = import ../../users/solavane/home.nix;
+
+  networking.hostName = "PC";
+
+  nixconf = { #Module imports
+    isDesktop = true;
+    nvidia.enable = true;
+    
+    desktop = {
+
+      mango = {
+        enable = true;
+        monitors = [
+          "name:DP-1,     width:2560, height:1440, refresh:240, x:2560, y:0"
+          "name:HDMI-A-1, width:2560, height:1440, refresh:120, x:0,    y:0"
+        ];
+      };
+
+      dms.enable = true;
+      #wallpaperTheming.enable = true;
+
+    };
+
+
+    programs = {
+
+      kitty.enable = true;
+      pcmanfm.enable = true;
+      librewolf.enable = true;
+      keepass.enable = true;
+      vesktop.enable = true;
+      steam.enable = true;
+      faugus.enable = true;
+
+    };
+  };
+}

@@ -1,0 +1,61 @@
+{ lib, ... }:
+
+{
+  options.nixconf = {
+
+    # ----------------------------------------------------------
+    # Host capability flags
+    # ----------------------------------------------------------
+    isDesktop = lib.mkOption {
+      type    = lib.types.bool;
+      default = false;
+      description = "Whether this host is a desktop system. Gates all desktop modules.";
+    };
+
+    # ----------------------------------------------------------
+    # Hardware
+    # ----------------------------------------------------------
+    nvidia.enable = lib.mkEnableOption "NVIDIA drivers (RTX 30+ / proprietary)";
+
+    # ----------------------------------------------------------
+    # Desktop environment modules
+    # ----------------------------------------------------------
+    desktop = {
+      #sddm.enable     = lib.mkEnableOption "Enables SDDM login screen";
+      hyprland.enable = lib.mkEnableOption "Hyprland compositor";
+      mango = {
+        enable   = lib.mkEnableOption "Mango Wayland Compositor";
+        monitors = lib.mkOption {
+          type    = lib.types.listOf lib.types.str;
+          default = [];
+        };
+      };
+      dms.enable              = lib.mkEnableOption "Dank Material Shell";
+      wallpaperTheming.enable = lib.mkEnableOption "Awww and Wallust runtime themeswitching and scripts for integrating into system";
+    };
+
+    # ----------------------------------------------------------
+    # System-level programs
+    # ----------------------------------------------------------
+    programs = {
+      kitty.enable     = lib.mkEnableOption "Kitty terminal";
+      foot.enable      = lib.mkEnableOption "Foot lightweight terminal";
+      pcmanfm.enable   = lib.mkEnableOption "pcmanfm file browser";
+      librewolf.enable = lib.mkEnableOption "LibreWolf browser";
+      elinks.enable    = lib.mkEnableOption "Elinks text based browser";
+      keepass.enable   = lib.mkEnableOption "KeePassXC password manager";
+      vesktop.enable   = lib.mkEnableOption "Vesktop Discord client";
+      steam.enable     = lib.mkEnableOption "Steam game launcher client";
+      faugus.enable    = lib.mkEnableOption "faugus games launcher";
+    };
+
+    # ----------------------------------------------------------
+    # Theme
+    # ----------------------------------------------------------
+    font = lib.mkOption {
+      type    = lib.types.str;
+      default = "JetBrains Mono";
+      description = "Primary monospace font.";
+    };
+  };
+}
