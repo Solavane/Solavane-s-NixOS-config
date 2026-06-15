@@ -9,6 +9,7 @@
     ./theming/default.nix
     ./programs/default.nix
     ./programs/prismlauncher.nix
+    ./programs/cataclysm-dda.nix
     ./programs/obs.nix
   ];
 }
