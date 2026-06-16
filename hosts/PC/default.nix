@@ -32,7 +32,7 @@
 
     programs = {
 
-      kitty.enable = true;
+      foot.enable = true;
       pcmanfm.enable = true;
       librewolf.enable = true;
       keepass.enable = true;
