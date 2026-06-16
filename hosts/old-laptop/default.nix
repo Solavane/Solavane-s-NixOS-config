@@ -6,7 +6,16 @@
     ./system-configuration.nix
   ];
 
-  home-manager.users.solavane = import ../../users/solavane/home.nix;
+  home-manager.users = { # :Imports for user HMs
+    
+    solavane = { ... }: {
+      imports = [
+        ../../users/solavane/home.nix
+        ../../users/solavane/home-old-laptop.nix
+      ];
+    };
+
+  };
 
   networking.hostName = "old-laptop";
 
