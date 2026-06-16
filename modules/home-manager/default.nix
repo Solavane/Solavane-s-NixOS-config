@@ -8,8 +8,10 @@
     ./desktop/awww.nix
     ./theming/default.nix
     ./programs/default.nix
+    ./programs/fastfetch.nix
     ./programs/prismlauncher.nix
     ./programs/cataclysm-dda.nix
+    ./programs/nvim.nix
     ./programs/obs.nix
   ];
 }
