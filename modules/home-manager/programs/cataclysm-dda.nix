@@ -5,11 +5,22 @@ let
 in
 {
   config = lib.mkIf (osConfig.nixconf.isDesktop && cfg.enable) {
-    home.packages = with pkgs; [
-      cataclysm-dda
+    home.packages = [
+      pkgs.cataclysm-dda
     ];
   };
 }
+
+
+#        version = "0.I-2026-06-06-1535";        
+#        src = pkgs.fetchFromGitHub {
+#          owner = "CleverRaven";
+#          repo = "Cataclysm-DDA";
+#          tag = "cdda-${version}";
+#          hash = "sha256-nzHqN6WjhuR1IoJ50XryI3B1fUQPepzGMaDJzudUaVI="; 
+#        };
+#        patches = []; 
+
 
 
 #    home.packages = let
@@ -26,7 +37,7 @@ in
 #          pkgs.autoPatchelfHook
 #          pkgs.makeWrapper
 #        ];
-#    
+#   
 #        buildInputs = [
 #          pkgs.SDL2
 #          pkgs.SDL2_image
