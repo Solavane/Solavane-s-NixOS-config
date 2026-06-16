@@ -32,7 +32,8 @@ in
       #syncobj_enable = 1
       drag_tile_to_tile = 1
       drag_corner = 4
-      no_border_when_single = 1
+      no_border_when_single = 0
+      no_radius_when_single = 0
 
       # Startup
       exec-once=dms run
@@ -41,9 +42,35 @@ in
       # Rule
       windowrule = isfloating:1, isnoborder:1, isunglobal:1, height:800, width:400, offsetx:-120, title:^StreamingChatOverlay$
 
-      # Theme
-      borderpx = 2
+      tagrule = layout_name:dwindle
 
+      # Theme
+      borderpx = 0
+      gappih = 0
+      gappiv = 0
+      gappoh = 0
+      gappov = 0
+
+      focused_opacity = 1
+      unfocused_opacity = 0.95
+
+      blur = 1
+      blur_params_radius = 3
+
+      # Animations
+      animation_type_open = zoom
+      animation_type_close = zoom
+
+      animation_fade_in=1
+      animation_fade_out=1
+      fadein_begin_opacity=0.5
+      fadeout_begin_opacity=0.5
+
+      # Layouts
+      dwindle_smart_split = 0
+      dwindle_hsplit = 0
+      dwindle_vsplit = 0
+      dwindle_smart_resize = 0
 
       # Sub config load
       source=./binds.conf
@@ -60,8 +87,6 @@ in
       bind=SUPER,f,togglemaximizescreen,0
       bind=SUPER+ctrl,f,togglefullscreen,
       bind=SUPER+shift,f,togglefakefullscreen,
-      bind=SUPER+alt,f,toggle_render_border,
-      bind=SUPER+alt,f,togglegaps,
       bind=SUPER,s,toggle_scratchpad
       bind=SUPER+alt,Up,incgaps,+2
       bind=SUPER+alt,Down,incgaps,-2
@@ -92,9 +117,15 @@ in
       bind=SUPER,Right,focusdir,right
       bind=SUPER,Up,focusdir,up
       bind=SUPER,Down,focusdir,down
+     
+      # resize window
+      bind=SUPER+CTRL,Up,resizewin,+0,-50
+      bind=SUPER+CTRL,Down,resizewin,+0,+50
+      bind=SUPER+CTRL,Left,resizewin,-50,+0
+      bind=SUPER+CTRL,Right,resizewin,+50,+0
       
       # switch layout
-      bind=CTRL+SUPER,i,setlayout,tile
+      bind=CTRL+SUPER,i,setlayout,dwindle
       bind=CTRL+SUPER,l,setlayout,scroller
       bind=SUPER,n,switch_layout
 
