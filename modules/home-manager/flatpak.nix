@@ -13,5 +13,8 @@ in {
 
     packages = 
       lib.optionals p.sober.enable    [ "org.vinegarhq.Sober" ];
+    
+    update.onActivation = true;
+
   };
 }
