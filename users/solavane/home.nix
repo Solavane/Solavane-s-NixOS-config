@@ -6,6 +6,10 @@
     stateVersion = "25.11";
   };
 
+  home.packages = [
+    jamesdsp
+  ];
+
   nixconf = {
     
     programs = {
