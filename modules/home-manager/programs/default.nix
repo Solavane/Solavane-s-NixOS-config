@@ -140,6 +140,22 @@ in {
           vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
         '';
       }
+      {
+        plugin = pkgs.vimPlugins.indent-blankline-nvim;
+        type = "lua";
+        config = ''
+          require("ibl").setup({
+            indent = {
+              char = "│", -- The clean, vertical gray line look
+            },
+            scope = {
+              enabled = true; -- Highlights the code block you're currently editing
+              show_start = false;
+              show_end = false;
+            },
+          })        
+        '';
+      }
     ];
   };
 }
