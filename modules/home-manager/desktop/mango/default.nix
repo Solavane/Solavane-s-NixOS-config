@@ -145,6 +145,7 @@ in
       bind=SUPER,b,spawn,librewolf
       bind=SUPER+CTRL,b,spawn,foot elinks
       bind=SUPER+SHIFT,d,spawn,vesktop
+      bind=SUPER,e,spawn,pcmanfm
     '';
 
     xdg.configFile."mango/env.conf".text = ''
