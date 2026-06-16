@@ -6,6 +6,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stable-nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +20,7 @@
 
   };
 
-  outputs = { nixpkgs, stable-nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, ... }@inputs:
   let
     mkHost = hostname: system: { desktop ? false }: nixpkgs.lib.nixosSystem {
       inherit system;
@@ -31,7 +33,10 @@
 	        home-manager = {
 	          useGlobalPkgs = true;
 	          useUserPackages = true;
-	          sharedModules = [ ./modules/home-manager/default.nix ];
+	          sharedModules = [ 
+              ./modules/home-manager/default.nix 
+              nix-flatpak.homeManagerModules.nix-flatpak 
+            ];
 	          extraSpecialArgs = { inherit inputs; };
 	          #backupFileExtension = "backup";
 	        };

@@ -7,6 +7,10 @@
       cataclysm-dda.enable = true;
       obs.enable = true;
     };
-  
+
+    flatpaks = {
+      sober.enable = true;
+    };
+    
   };
 }

@@ -36,6 +36,8 @@
       coreOffset = -80;
     };
 
+    flatpak.enable = true;
+
     lact.enable = true;
 
     fstrim.enable = true;

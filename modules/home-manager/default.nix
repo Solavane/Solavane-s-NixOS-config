@@ -3,6 +3,7 @@
 {
   imports = [
     ./options.nix
+    ./flatpak.nix
     ./desktop/hyprland/default.nix
     ./desktop/mango/default.nix
     ./desktop/awww.nix
