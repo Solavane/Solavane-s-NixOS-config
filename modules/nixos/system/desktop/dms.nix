@@ -8,4 +8,7 @@ lib.mkIf (config.nixconf.isDesktop && cfg.enable) {
     enable = true;
     systemd.enable = true;
   };
+  environment.systemPackages = with pkgs; [
+    papirus-icon-theme
+  ];
 }
