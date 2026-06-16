@@ -11,4 +11,8 @@ lib.mkIf (config.nixconf.isDesktop && cfg.enable) {
   environment.systemPackages = with pkgs; [
     papirus-icon-theme
   ];
+  
+  environment.sessionVariables = {
+    QS_ICON_THEME = "Papirus-Dark";
+  };
 }
