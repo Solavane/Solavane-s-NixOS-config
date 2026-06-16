@@ -120,7 +120,7 @@ in {
     plugins = [
       {
         plugin = pkgs.vimPlugins.nvim-tree-lua;
-	type = "lua";
+	      type = "lua";
         config = ''
           require('nvim-tree').setup()
         '';
@@ -146,10 +146,10 @@ in {
         config = ''
           require("ibl").setup({
             indent = {
-              char = "│", -- The clean, vertical gray line look
+              char = "│",
             },
             scope = {
-              enabled = true; -- Highlights the code block you're currently editing
+              enabled = true;
               show_start = false;
               show_end = false;
             },
