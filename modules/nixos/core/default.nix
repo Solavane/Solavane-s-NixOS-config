@@ -29,6 +29,7 @@
     wget
     curl
     ripgrep
+    jq
     zip
     unzip
     (python3.withPackages (ps: with ps; [ 

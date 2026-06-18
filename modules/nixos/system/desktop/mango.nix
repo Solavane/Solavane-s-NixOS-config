@@ -33,6 +33,7 @@ in
       wl-clipboard-rs
       satty
       wayfreeze
+      jq
     ];
     
     security.polkit.enable = true;
