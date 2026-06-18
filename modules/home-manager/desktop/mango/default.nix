@@ -27,7 +27,8 @@ in
       # Custom app bind
       bind=SUPER,b,spawn,librewolf
       bind=SUPER+CTRL,b,spawn,foot elinks
-      bind=SUPER+SHIFT,d,spawn,vesktop
+      bind=SUPER+Ctrl,d,spawn,vesktop
+      bind=SUPER+Ctrl,s,spawn,foot spotify_player
     '';
 
     xdg.configFile."mango/env.conf".text = ''
