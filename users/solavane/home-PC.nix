@@ -8,6 +8,7 @@
     
     programs = {
       prismlauncher.enable = true;
+      godot.enable = true;
       cataclysm-dda.enable = true;
       obs.enable = true;
     };

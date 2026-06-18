@@ -10,6 +10,7 @@
     ./theming/default.nix
     ./programs/default.nix
     ./programs/fastfetch.nix
+    ./programs/godot.nix
     ./programs/prismlauncher.nix
     ./programs/cataclysm-dda.nix
     ./programs/nvim.nix
