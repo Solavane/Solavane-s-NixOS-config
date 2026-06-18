@@ -9,6 +9,7 @@
     ./desktop/awww.nix
     ./theming/default.nix
     ./programs/default.nix
+    ./programs/blender.nix
     ./programs/fastfetch.nix
     ./programs/godot.nix
     ./programs/prismlauncher.nix

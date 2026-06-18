@@ -7,6 +7,7 @@
   nixconf = {
     
     programs = {
+      blender.enable = true;
       prismlauncher.enable = true;
       godot.enable = true;
       cataclysm-dda.enable = true;
