@@ -20,13 +20,13 @@ in
       })
     ];
     programs.mango.enable = true;
-  
+    
     xdg.portal = {
       enable = true;
       extraPortals = [ ];  
       wlr.enable = true;
     };
-  
+    
     security.polkit.enable = true;
   };
 }
