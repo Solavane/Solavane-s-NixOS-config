@@ -18,6 +18,11 @@ in
       #THIS WILL CAUSE PROBLEMS IF FILE OR PROJECT IS MOVED IN ANY WAY, Also config file folder must be called nixconfig
     };
 
+    xdg.configFile."mango/scripts" = {
+      source = ./scripts;
+      recursive = true;
+    };
+
     xdg.configFile."mango/binds.conf".text = ''
       # Custom app bind
       bind=SUPER,b,spawn,librewolf

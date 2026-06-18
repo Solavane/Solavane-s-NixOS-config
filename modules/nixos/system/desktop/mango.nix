@@ -27,6 +27,14 @@ in
       wlr.enable = true;
     };
     
+    environment.systemPackages = with pkgs; [
+      grim
+      slurp
+      wl-clipboard-rs
+      satty
+      wayfreeze
+    ];
+    
     security.polkit.enable = true;
   };
 }
