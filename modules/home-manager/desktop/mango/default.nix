@@ -29,6 +29,7 @@ in
       bind=SUPER+CTRL,b,spawn,foot elinks
       bind=SUPER+Ctrl,d,spawn,vesktop
       bind=SUPER+Ctrl,s,spawn,foot spotify_player
+      bind=SUPER+Ctrl,g,spawn,steam
     '';
 
     xdg.configFile."mango/env.conf".text = ''

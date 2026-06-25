@@ -1,4 +1,4 @@
-{ config, osConfig, lib, pkgs, ... }:
+{ config, osConfig, lib, pkgs, inputs, ... }:
 
 let
   cfg = config.nixconf.programs.blender;
