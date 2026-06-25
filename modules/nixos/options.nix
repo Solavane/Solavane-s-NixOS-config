@@ -34,6 +34,8 @@
       wallpaperTheming.enable = lib.mkEnableOption "Awww and Wallust runtime themeswitching and scripts for integrating into system";
     };
 
+    sddm.enable       = lib.mkEnableOption "login manager";
+
     # ----------------------------------------------------------
     # System-level programs
     # ----------------------------------------------------------

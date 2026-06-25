@@ -36,6 +36,8 @@
 
     };
 
+    sddm.enable = true;
+
 
     programs = {
 

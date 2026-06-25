@@ -2,6 +2,7 @@
   imports = [
     ./options.nix
     ./core/default.nix
+    ./system/sddm.nix
     ./system/desktop/hyprland.nix
     ./system/desktop/mango.nix
     ./system/desktop/dms.nix

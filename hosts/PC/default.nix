@@ -37,7 +37,8 @@
       #wallpaperTheming.enable = true;
 
     };
-
+    
+    sddm.enable = true;
 
     programs = {
 

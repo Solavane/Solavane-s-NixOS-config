@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   # -------------------------------------------------------
@@ -15,7 +15,7 @@
     auto-optimise-store   = true;
   };
 
-  nixpkgs.config.allowUnfree = true;   # needed for NVIDIA
+  nixpkgs.config.allowUnfree = true; 
 
   # -------------------------------------------------------
   # Base packages every host gets
@@ -55,4 +55,11 @@
       fi
     '';
   };
+
+  # -------------------------------------------------------
+  # Desktop-only options, disabled on servers
+  # -------------------------------------------------------
+
+  #qt.enable = lib.mkIf config.nixconf.isDesktop true;
+
 }
