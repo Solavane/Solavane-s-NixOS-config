@@ -4,6 +4,8 @@
     spotify-player 
   ];
 
+  services.linux-wallpaperengine.enable = true;
+
   nixconf = {
     
     programs = {
