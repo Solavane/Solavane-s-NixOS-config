@@ -46,8 +46,9 @@
     };
   in {
     nixosConfigurations = {
-      PC         = mkHost "PC"         "x86_64-linux" { desktop = true; };
-      old-laptop = mkHost "old-laptop" "x86_64-linux" { desktop = true; };
+      PC           = mkHost "PC"           "x86_64-linux" { desktop = true; };
+      old-laptop   = mkHost "old-laptop"   "x86_64-linux" { desktop = true; };
+      dell-laptop  = mkHost "dell-laptop"  "x86_64-linux" { desktop = true; };
     };
   };
 }
