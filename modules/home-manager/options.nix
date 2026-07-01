@@ -12,6 +12,7 @@
       cataclysm-dda.enable  = lib.mkEnableOption "Cataclysm: Dark Days Ahead game";
       godot.enable          = lib.mkEnableOption "Godot game engine";
       obs.enable            = lib.mkEnableOption "OBS Studio screen recording and streaming";
+      zellij.enable         = lib.mkEnableOption "Terminal multiplexer";
     };
 
     flatpaks = {

@@ -45,11 +45,10 @@
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
-      flake = "/home/solavane/nixconfig";
+      flake = "/home/solavane/nixconfig"; # Change this depending on who has the configuration file for nh support
     };
 
   };
-
 
   services = {
     ntp.enable = true;

@@ -16,5 +16,6 @@
     ./programs/cataclysm-dda.nix
     ./programs/nvim.nix
     ./programs/obs.nix
+    ./programs/zellij.nix
   ];
 }

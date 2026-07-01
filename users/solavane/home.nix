@@ -14,7 +14,7 @@
   nixconf = {
     
     programs = {
-
+      zellij.enable = true;
     };
   
   };
