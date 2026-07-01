@@ -38,10 +38,23 @@
     ]))
   ];
 
-  programs.git.enable = true;
+  programs = {
+    git.enable  = true;
+    
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/solavane/nixconfig";
+    };
 
-  services.ntp.enable = true;
-  services.gvfs.enable = true;
+  };
+
+
+  services = {
+    ntp.enable = true;
+    gvfs.enable = true;
+  };
 
   # -------------------------------------------------------
   # User shell
