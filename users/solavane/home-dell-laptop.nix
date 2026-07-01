@@ -5,6 +5,9 @@
     programs = {
 
     };
-  
+    
+    flatpaks = {
+      sober.enable = true;
+    };
   };
 }
