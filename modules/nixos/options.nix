@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
   options.nixconf = {
@@ -32,6 +32,7 @@
       };
       dms.enable              = lib.mkEnableOption "Dank Material Shell";
       wallpaperTheming.enable = lib.mkEnableOption "Awww and Wallust runtime themeswitching and scripts for integrating into system";
+      shell.enable = lib.mkEnableOption "Custom barless shell built with eww and fuzzel";
     };
 
     sddm.enable       = lib.mkEnableOption "login manager";
@@ -59,5 +60,18 @@
       default = "JetBrains Mono";
       description = "Primary monospace font.";
     };
+  };
+
+  # ----------------------------------------------------------
+  # Automatic config handeling
+  # ----------------------------------------------------------
+  config = let
+    cfg = config.nixconf;
+
+    wmEnabled = cfg.desktop.hyprland.enable || cfg.desktop.mango.enable;
+  in {
+    
+    # Enables shell if window manager is active
+    nixconf.desktop.shell.enable = lib.mkIf wmEnabled true;
   };
 }

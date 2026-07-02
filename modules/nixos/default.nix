@@ -6,6 +6,7 @@
     ./system/desktop/hyprland.nix
     ./system/desktop/mango.nix
     ./system/desktop/dms.nix
+    ./system/desktop/shell.nix
     ./programs/default.nix
     ./programs/pcmanfm.nix
     ./programs/steam.nix
