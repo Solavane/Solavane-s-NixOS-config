@@ -10,10 +10,10 @@ lib.mkIf (config.nixconf.isDesktop && cfg.enable) {
     cliphist
     dunst
     eww
-    fuzzel
     matugen
     pavucontrol
     playerctl
+    rofi
   ];
 
   services.dunst = {

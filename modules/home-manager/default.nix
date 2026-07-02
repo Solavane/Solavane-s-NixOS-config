@@ -8,7 +8,7 @@
     ./desktop/mango/default.nix
     ./desktop/awww.nix
     ./desktop/eww.nix
-    ./desktop/fuzzel.nix
+    ./desktop/rofi.nix
     ./desktop/shell.nix
     ./theming/default.nix
     ./programs/default.nix
