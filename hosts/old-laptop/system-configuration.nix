@@ -14,6 +14,10 @@
   #  options = [ "subvol=@" "noatime" "discard=async" ];
   #};  
 
+  environment.systemPackages = with pkgs; [
+    acpi #Laptop battery analyser
+  ];
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
