@@ -25,7 +25,6 @@
     htop
     p7zip
     p7zip-rar
-    tree
     wget
     curl
     ripgrep

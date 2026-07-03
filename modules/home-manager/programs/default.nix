@@ -40,6 +40,8 @@ in {
 
     shellAliases = {
       cd = "z";
+      ls = "eza -l --icons";
+      tree = "eza --tree";
     };
 
     shellAbbrs = {
@@ -56,6 +58,11 @@ in {
   };
 
   programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.eza = {
     enable = true;
     enableFishIntegration = true;
   };
