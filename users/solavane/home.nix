@@ -1,5 +1,16 @@
 { config, pkgs, ... }: {
   
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name  = "solavane";
+        email = "solavane@proton.me";
+      };
+      init.defaultBranch = "main";
+    };
+  };
+
   home = {
     username = "solavane";
     homeDirectory = "/home/solavane";
