@@ -3,7 +3,7 @@
   nixconf = {
     
     programs = {
-
+      prismlauncher.enable = true;
     };
     
     flatpaks = {

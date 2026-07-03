@@ -1,17 +1,25 @@
-{ ... }: {
-  
-  #xdg.configFile."rofi/scripts" = {
-  #  source = ./scripts/rofi;
-  #  recursive = true;
-  #};
+{ lib, osConfig, ... }: 
+let
+  enabled = osConfig.nixconf.desktop.shell.enable;
+in
+{
+  config = lib.mkIf enabled {
 
-  programs.rofi = {
-    terminal = "\${pkgs.foot}/bin/foot";
-    modes = [
-      "drun"
-      "emoji"
-      "window"
-      "filebrowser"
-    ];
+    programs.rofi = {
+      enable = true;
+      terminal = "\${pkgs.foot}/bin/foot";
+      modes = [
+        "drun"
+        "window"
+        "filebrowser"
+      ];
+      extraConfig = {
+        show-icons = true;
+        "drun" = {
+          display-name = "Application";
+        };
+
+      };
+    };
   };
 }
