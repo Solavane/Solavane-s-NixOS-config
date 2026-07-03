@@ -24,10 +24,14 @@
   let
     mkHost = hostname: system: { desktop ? false }: nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs; isDesktop = desktop; };
       modules = [
         ./hosts/${hostname}/default.nix
         ./modules/nixos/default.nix
+
+        ({ config, ... }: {
+          nixconf.isDesktop = nixpkgs.lib.mkDefault desktop;
+        })
 
 	      home-manager.nixosModules.home-manager
 	      {
@@ -39,7 +43,6 @@
               nix-flatpak.homeManagerModules.nix-flatpak 
             ];
 	          extraSpecialArgs = { inherit inputs; };
-	          #backupFileExtension = "backup";
 	        };
       	}
       ];

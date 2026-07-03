@@ -20,7 +20,6 @@
   networking.hostName = "old-laptop";
 
   nixconf = { #Module imports
-    isDesktop = true;
     
     desktop = {
 
@@ -30,10 +29,6 @@
           "make:AU Optronics, width:1366, height:768, refresh:60, x:0, y:0"
         ];
       };
-
-      dms.enable = true;
-      #wallpaperTheming.enable = true;
-
     };
 
     sddm.enable = true;

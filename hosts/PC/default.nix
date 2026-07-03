@@ -20,7 +20,6 @@
   networking.hostName = "PC";
 
   nixconf = { #Module imports
-    isDesktop = true;
     nvidia.enable = true;
     
     desktop = {
@@ -32,10 +31,6 @@
           "name:HDMI-A-1, width:2560, height:1440, refresh:120, x:0,    y:0"
         ];
       };
-
-      dms.enable = true;
-      #wallpaperTheming.enable = true;
-
     };
     
     sddm.enable = true;

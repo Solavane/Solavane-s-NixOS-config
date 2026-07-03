@@ -3,7 +3,7 @@
 {
   options.nixconf = {
     desktop = {
-      awww.enable = lib.mkEnableOption "Animated wallpaper thing";
+
     };
 
     programs = {

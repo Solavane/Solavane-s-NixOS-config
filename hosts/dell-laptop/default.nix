@@ -20,7 +20,6 @@
   networking.hostName = "dell-laptop";
 
   nixconf = { #Module imports
-    isDesktop = true;
     
     desktop = {
 
@@ -33,7 +32,6 @@
     };
 
     sddm.enable = true;
-
 
     programs = {
 

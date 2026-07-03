@@ -9,11 +9,6 @@
     device = "/dev/sda";
   };
 
-  # File system settings. Is completely fine to edit, but old files may stay in the old state.
-  #fileSystems."/" = {
-  #  options = [ "subvol=@" "noatime" "discard=async" ];
-  #};  
-
   environment.systemPackages = with pkgs; [
     acpi #Laptop battery analyser
   ];

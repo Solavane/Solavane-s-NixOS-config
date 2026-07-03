@@ -30,8 +30,6 @@
           default = [];
         };
       };
-      dms.enable              = lib.mkEnableOption "Dank Material Shell";
-      wallpaperTheming.enable = lib.mkEnableOption "Awww and Wallust runtime themeswitching and scripts for integrating into system";
       shell.enable = lib.mkEnableOption "Custom barless shell built with eww and fuzzel";
     };
 
