@@ -11,5 +11,6 @@
     ./programs/pcmanfm.nix
     ./programs/steam.nix
     ./core/nvidia.nix
+    ./services/syncthing.nix
   ];
 }
