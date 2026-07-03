@@ -53,16 +53,19 @@ in {
   };
 
   programs.zoxide = {
+    # cd replacement, learns common paths to make cding faster
     enable = true;
     enableFishIntegration = true;
   };
 
   programs.fzf = {
+    # fuzzy search command
     enable = true;
     enableFishIntegration = true;
   };
 
   programs.eza = {
+    # has prettier ls and tree commands
     enable = true;
     enableFishIntegration = true;
   };
