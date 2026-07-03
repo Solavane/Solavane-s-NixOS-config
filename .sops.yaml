@@ -1,0 +1,16 @@
+keys:
+  - &pc           age1
+  - &dell         age1
+  - &old          age1
+  - &solavane     age1 
+
+creation_rules:
+  - path_regex: hosts/PC/secrets\.yaml$
+    key_groups:
+      - age: [*pc, *solavane]
+  - path_regex: hosts/dell-laptop/secrets\.yaml$
+    key_groups:
+      - age: [*dell, *solavane]
+  - path_regex: hosts/old-laptop/secrets\.yaml$
+    key_groups:
+      - age: [*old, *solavane]

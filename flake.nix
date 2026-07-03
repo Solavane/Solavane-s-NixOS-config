@@ -18,9 +18,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, ... }@inputs:
+  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, sops-nix, ... }@inputs:
   let
     mkHost = hostname: system: { desktop ? false }: nixpkgs.lib.nixosSystem {
       inherit system;
@@ -45,6 +50,8 @@
 	          extraSpecialArgs = { inherit inputs; };
 	        };
       	}
+
+        sops-nix.nixosModules.sops
       ];
     };
   in {
