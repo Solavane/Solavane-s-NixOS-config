@@ -37,5 +37,26 @@ in {
     shellInit = ''
       fastfetch
     '';
+
+    shellAliases = {
+      cd = "z";
+    };
+
+    shellAbbrs = {
+      ga = "git add";
+      "ga." = "git add .";
+      gp = "git pull";
+      gc = "git commit -m";
+    };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 }
