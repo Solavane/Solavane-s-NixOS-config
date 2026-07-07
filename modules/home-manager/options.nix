@@ -13,6 +13,7 @@
       godot.enable          = lib.mkEnableOption "Godot game engine";
       obs.enable            = lib.mkEnableOption "OBS Studio screen recording and streaming";
       zellij.enable         = lib.mkEnableOption "Terminal multiplexer";
+      zen-browser.enable    = lib.mkEnableOption "minimal browser";
     };
 
     flatpaks = {

@@ -26,6 +26,7 @@
     
     programs = {
       zellij.enable = true;
+      zen-browser.enable = true;
     };
   
   };

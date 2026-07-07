@@ -18,5 +18,6 @@
     ./programs/nvim.nix
     ./programs/obs.nix
     ./programs/zellij.nix
+    ./programs/zen-browser.nix
   ];
 }
