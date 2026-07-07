@@ -29,44 +29,54 @@ in {
     };
   };
 
-  programs.fish = {
+  programs.zsh = {
     enable = true;
-    interactiveShellInit = ''
-      set fish_greeting
-    '';
-    shellInit = ''
-      fastfetch
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    setOptions = [
+      "HIST_IGNORE_ALL_DUPS"
+    ];
+
+    initContent = ''
+      nitch
     '';
 
     shellAliases = {
       cd = "z";
       ls = "eza -l --icons";
       tree = "eza --tree";
-    };
-
-    shellAbbrs = {
-      ga = "git add";
+      
       "ga." = "git add .";
-      gp = "git pull";
-      gc = "git commit -m";
+    };
+    
+    # plugin manager
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "alias-finder"
+        "gitfast"
+      ];
+      theme = "robbyrussell";
     };
   };
 
   programs.zoxide = {
     # cd replacement, learns common paths to make cding faster
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.fzf = {
     # fuzzy search command
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.eza = {
     # has prettier ls and tree commands
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 }

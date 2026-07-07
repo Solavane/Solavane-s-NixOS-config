@@ -2,7 +2,7 @@
 
 {
   services.openssh = {
-    enable                = false;   # flip to true on servers
+    enable                = false;
     settings.PermitRootLogin = "no";
   };
 
