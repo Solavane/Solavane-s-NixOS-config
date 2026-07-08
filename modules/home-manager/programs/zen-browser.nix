@@ -11,11 +11,98 @@ let
     };
   };
 
+  # Default allowed websites to store cookies when zen closes
+  allowedCookieSites = [
+    "https://google.com"
+    "https://duckduckgo.com"
+    "https://spotify.com"
+    "https://github.com"
+  ];
+
   prefs = {
     # Check these out at about:config
-    "extensions.autoDisableScopes" = 0;
-    "extensions.pocket.enabled" = false;
-    # ...
+    "zen.welcome-screen.seen" = true;
+    "browser.shell.checkDefaultBrowser" = false;
+    
+    #################################
+    # Hardening (Security settings) #
+    #################################
+    # referenced from https://gist.github.com/jolovicdev/82ed0f1667505345dccd69c7678a71ca
+    
+    # Captive Portal
+    "network.captive-portal-service.enabled" = false;
+    "captivedetect.canonicalURL" = "";
+
+    # Additional Geolocation Hardening
+    "geo.enabled" = false;
+    "geo.provider.ms-windows-location" = false;
+    "geo.provider.use_corelocation" = false;
+    "geo.provider.use_gpsd" = false;
+    "geo.provider.use_geoclue" = false;
+
+    # Additional Push Notifications Hardening
+    "dom.push.enabled" = false;
+    "dom.push.connection.enabled" = false;
+    "dom.push.serverURL" = "";
+
+    # Firefox Monitor
+    "signon.management.page.breach-alerts.enabled" = false;
+    "extensions.fxmonitor.enabled" = false;
+
+    # Safe Browsing
+    "browser.safebrowsing.malware.enabled" = false;
+    "browser.safebrowsing.phishing.enabled" = false;
+    "browser.safebrowsing.blockedURIs.enabled" = false;
+    "browser.safebrowsing.provider.google4.gethashURL" = "";
+    "browser.safebrowsing.provider.google4.updateURL" = "";
+    "browser.safebrowsing.provider.google.gethashURL" = "";
+    "browser.safebrowsing.provider.google.updateURL" = "";
+
+    # Prefetching and Predictive Connections
+    "network.predictor.enable-prefetch" = false;
+    "network.http.referer.disallowCrossSiteRelaxingDefault" = true;
+
+    # Mozilla Sync
+    "identity.fxaccounts.enabled" = false;
+
+    # Extension Blocklist Updates
+    "extensions.blocklist.enabled" = false;
+
+    # Automatic Updates
+    "app.update.auto" = false;
+    "app.update.enabled" = false;
+
+    # WebRTC (Prevents IP leaks)
+    "media.peerconnection.enabled" = false;
+    "media.navigator.enabled" = false;
+
+    # Search Suggestions
+    "browser.search.suggest.enabled.private" = false;
+    "browser.urlbar.suggest.searches" = false;
+
+    # Location Bar Suggestions
+    "browser.urlbar.suggest.quicksuggest.sponsored" = false;
+    "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
+
+    # UI Elements & Quality of Life (Ads, Firefox View, Shopping)
+    "browser.vpn_promo.enabled" = false;
+    "browser.tabs.firefox-view" = false;
+    "browser.shopping.experience2023.enabled" = false;
+
+    ###############################
+    # End of referenced hardening #
+    # Own General hardening       #
+    ###############################
+
+    # Content blocking
+    "browser.contentblocking.category" = "strict";
+
+    # Force HTTPS
+    "dom.security.https_only_mode" = true;
+    "dom.security.https_only_mode_ever_enabled" = true;
+
+    # Clear cookies on shutdown
+    "privacy.clearOnShutdown_v2.cookiesAndStorage" = true;
   };
 
   extensions = [
@@ -23,7 +110,6 @@ let
     # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
     # Then go to https://addons.mozilla.org/api/v5/addons/addon/!SHORT_ID!/ to get the guid
     (extension "ublock-origin" "uBlock0@raymondhill.net")
-    # ...
   ];
   
 in
@@ -43,6 +129,11 @@ in
           extraPolicies = {
             DisableTelemetry = true;
             ExtensionSettings = builtins.listToAttrs extensions;
+
+            Cookies = {
+              Allow = allowedCookieSites;
+              Default = true;
+            };
 
             SearchEngines = {
               Default = "ddg";
