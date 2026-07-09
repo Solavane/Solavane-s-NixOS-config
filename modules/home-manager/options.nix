@@ -13,7 +13,25 @@
       godot.enable          = lib.mkEnableOption "Godot game engine";
       obs.enable            = lib.mkEnableOption "OBS Studio screen recording and streaming";
       zellij.enable         = lib.mkEnableOption "Terminal multiplexer";
-      zen-browser.enable    = lib.mkEnableOption "minimal browser";
+      zen-browser = {
+        enable = lib.mkEnableOption "minimal browser";
+        allowedCookieSites = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [
+            "https://google.com"
+            "https://duckduckgo.com"
+            "https://github.com"    
+          ];
+          description = "list of allowed websites to store cookies when Zen closes";
+        };
+        uBlockBlocklist = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [
+            "www.youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope" # Disables yucky shorts on homepage
+          ];
+          description = "Custom filters uBlock origin will use to remove elements";
+        };
+      };
     };
 
     flatpaks = {

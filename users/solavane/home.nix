@@ -26,8 +26,15 @@
     
     programs = {
       zellij.enable = true;
-      zen-browser.enable = true;
-    };
-  
+      zen-browser = {
+        enable = true;
+        allowedCookieSites = [
+          "https://google.com"
+          "https://duckduckgo.com"
+          "https://github.com"
+          "https://spotify.com"
+        ];
+      };
+    }; 
   };
 }

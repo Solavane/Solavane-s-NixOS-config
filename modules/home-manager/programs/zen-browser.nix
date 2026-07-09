@@ -11,14 +11,6 @@ let
     };
   };
 
-  # Default allowed websites to store cookies when zen closes
-  allowedCookieSites = [
-    "https://google.com"
-    "https://duckduckgo.com"
-    "https://spotify.com"
-    "https://github.com"
-  ];
-
   prefs = {
     # Check these out at about:config
     "zen.welcome-screen.seen" = true;
@@ -102,7 +94,38 @@ let
     "dom.security.https_only_mode_ever_enabled" = true;
 
     # Clear cookies on shutdown
-    "privacy.clearOnShutdown_v2.cookiesAndStorage" = true;
+    "network.cookie.lifetimePolicy" = 2; 
+    "privacy.sanitize.sanitizeOnShutdown" = false;
+
+    # Disable WebGL, can enable with exeptions in settings
+    "webgl.disabled" = true;
+
+    # Battery info can be used for tracking
+    "dom.battery.enabled" = false;
+
+    # Enable Multi-Account Containers
+    "privacy.userContext.enabled" = true;
+    "privacy.userContext.ui.enabled" = true;
+
+    # Enable Total Cookie Protection (Dynamic First-Party Isolation)
+    "network.cookie.cookieBehavior" = 5;
+
+    # Enables newer Fingerprinting Protection
+    "privacy.fingerprintingProtection" = true;
+    "privacy.fingerprintingProtection.pbmode" = true;
+
+    # Disable link prefetching and speculative connections (Without this, just hovering over links can be harmful)
+    "network.dns.disablePrefetch" = true;
+    "network.dns.disablePrefetchFromHTTPS" = true;
+    "network.prefetch-next" = false;
+    "network.http.speculative-parallel-limit" = 0;
+
+    # Disable disk cache (forces RAM-only cache)
+    "browser.cache.disk.enable" = false;
+    "browser.cache.disk_cache_ssl" = false;
+    "browser.cache.offline.enable" = false;
+
+
   };
 
   extensions = [
@@ -131,8 +154,16 @@ in
             ExtensionSettings = builtins.listToAttrs extensions;
 
             Cookies = {
-              Allow = allowedCookieSites;
+              Allow = cfg.allowedCookieSites;
               Default = true;
+            };
+
+            "3rdparty".Extensions = {
+              "uBlock0@raymondhill.net" = {
+                adminSettings = {
+                  userFilters = lib.concatStringsSep "\n" cfg.uBlockBlocklist;
+                };
+              };
             };
 
             SearchEngines = {
