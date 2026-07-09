@@ -11,6 +11,7 @@
       prismlauncher.enable  = lib.mkEnableOption "minecraft prism launcher";
       cataclysm-dda.enable  = lib.mkEnableOption "Cataclysm: Dark Days Ahead game";
       godot.enable          = lib.mkEnableOption "Godot game engine";
+      keepass.enable        = lib.mkEnableOption "local password manager";
       obs.enable            = lib.mkEnableOption "OBS Studio screen recording and streaming";
       zellij.enable         = lib.mkEnableOption "Terminal multiplexer";
       zen-browser = {

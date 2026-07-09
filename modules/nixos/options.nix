@@ -44,7 +44,6 @@
       pcmanfm.enable   = lib.mkEnableOption "pcmanfm file browser";
       librewolf.enable = lib.mkEnableOption "LibreWolf browser";
       elinks.enable    = lib.mkEnableOption "Elinks text based browser";
-      keepass.enable   = lib.mkEnableOption "KeePassXC password manager";
       vesktop.enable   = lib.mkEnableOption "Vesktop Discord client";
       steam.enable     = lib.mkEnableOption "Steam game launcher client";
       faugus.enable    = lib.mkEnableOption "faugus games launcher";

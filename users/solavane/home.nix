@@ -25,6 +25,7 @@
   nixconf = {
     
     programs = {
+      keepass.enable = true;
       zellij.enable = true;
       zen-browser = {
         enable = true;

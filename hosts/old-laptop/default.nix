@@ -40,7 +40,6 @@
       pcmanfm.enable = true;
       librewolf.enable = true;
       elinks.enable = true;
-      keepass.enable = true;
       
     };
   };

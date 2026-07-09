@@ -13,6 +13,7 @@
     ./programs/blender.nix
     ./programs/fastfetch.nix
     ./programs/godot.nix
+    ./programs/keepass.nix
     ./programs/prismlauncher.nix
     ./programs/cataclysm-dda.nix
     ./programs/nvim.nix

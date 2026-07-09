@@ -40,7 +40,6 @@
       foot.enable = true;
       pcmanfm.enable = true;
       librewolf.enable = true;
-      keepass.enable = true;
       vesktop.enable = true;
       steam.enable = true;
       faugus.enable = true;

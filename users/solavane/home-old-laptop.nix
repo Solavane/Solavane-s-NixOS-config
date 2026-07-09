@@ -5,6 +5,6 @@
     programs = {
       cataclysm-dda.enable = true;
     };
-  
+
   };
 }
