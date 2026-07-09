@@ -94,8 +94,7 @@ let
     "dom.security.https_only_mode_ever_enabled" = true;
 
     # Clear cookies on shutdown
-    "network.cookie.lifetimePolicy" = 2; 
-    "privacy.sanitize.sanitizeOnShutdown" = false;
+    "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
 
     # Disable WebGL, can enable with exeptions in settings
     "webgl.disabled" = true;

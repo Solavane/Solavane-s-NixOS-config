@@ -7,6 +7,7 @@ in
   config = lib.mkIf (osConfig.nixconf.isDesktop && cfg.enable) {
     programs.keepassxc = {
       enable = true;
+      autostart = true;
     };
 
     home.packages = [ pkgs.crudini ];
@@ -28,6 +29,10 @@ in
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "ColorPasswords" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "CompactMode" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "HidePasswords" "true"
+        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeOnStartup" "true"
+        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeOnClose" "true"
+        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeToTray" "true"
+        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "ShowTrayIcon" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "Browser" "Enabled" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "Security" "IconDownloadFallback" "true"
       '';

@@ -34,8 +34,16 @@
           "https://duckduckgo.com"
           "https://github.com"
           "https://spotify.com"
+          "https://oraclecloud.com"
         ];
       };
     }; 
   };
+
+
+  ###############################################################
+  # Move this to shared home once I have the energy to fix that #
+  ###############################################################
+
+  xdg.autostart.enable = true;
 }
