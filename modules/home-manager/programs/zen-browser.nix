@@ -132,8 +132,14 @@ let
     # To add additional extensions, find it on addons.mozilla.org, find
     # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
     # Then go to https://addons.mozilla.org/api/v5/addons/addon/!SHORT_ID!/ to get the guid
+    # Adding many extensions makes it easier for websites to fingerprint you
     (extension "ublock-origin" "uBlock0@raymondhill.net")
-  ];
+    (extension "sponsorblock"  "sponsorBlocker@ajay.app")
+  ]
+
+  # Enables keepassxc-browser extension if keepass option is enabled
+  ++ lib.optional config.nixconf.programs.keepass.enable
+    (extension "keepassxc-browser" "keepassxc-browser@keepassxc.org");
   
 in
 {
