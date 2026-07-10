@@ -134,6 +134,7 @@ let
     # Adding many extensions makes it easier for websites to fingerprint you
     (extension "ublock-origin" "uBlock0@raymondhill.net")
     (extension "sponsorblock"  "sponsorBlocker@ajay.app")
+    (extension "violentmonkey" "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}")
   ]
 
   # Enables keepassxc-browser extension if keepass option is enabled
