@@ -10,6 +10,7 @@
     ./programs/pcmanfm.nix
     ./programs/steam.nix
     ./core/nvidia.nix
+    ./services/pipewire.nix
     ./services/syncthing.nix
   ];
 }
