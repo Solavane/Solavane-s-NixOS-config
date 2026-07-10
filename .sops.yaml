@@ -1,16 +1,15 @@
 keys:
-  - &pc           age1
-  - &dell         age1
-  - &old          age1
-  - &solavane     age1 
+  - &pc           age1e2s40hfvrtaete3gfpx49mglee8dlupf264hy8my3s5ffwy4h5zqhhczg2
+  - &dell-laptop  age1cdc6gaqvrdhrkejtn44k56f2jr6exqpfun6qlspekzlllq4xhd4spphwg4
+  #- &old-laptop   age1
+  - &solavane     age1j76nztt2puqjec70yue4qj7s089sw4c365zpjjf3ukqjjhe65uyqcepfag 
 
 creation_rules:
-  - path_regex: hosts/PC/secrets\.yaml$
+  - path_regex: hosts/shared/secrets\.yaml$
     key_groups:
-      - age: [*pc, *solavane]
-  - path_regex: hosts/dell-laptop/secrets\.yaml$
+      - age: [*pc, *dell-laptop, *solavane]
+  - path_regex: users/solavane/secrets\.yaml$
     key_groups:
-      - age: [*dell, *solavane]
-  - path_regex: hosts/old-laptop/secrets\.yaml$
-    key_groups:
-      - age: [*old, *solavane]
+      - age: [*pc, *dell-laptop, *solavane]
+
+

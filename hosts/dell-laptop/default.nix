@@ -37,7 +37,7 @@
 
       foot.enable = true;
       pcmanfm.enable = true;
-      librewolf.enable = true;
+      localsend.enable = true;
       elinks.enable = true;
       vesktop.enable = true;
       

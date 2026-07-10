@@ -29,6 +29,7 @@
     curl
     ripgrep
     jq
+    sops
     zip
     unzip
     (python3.withPackages (ps: with ps; [ 

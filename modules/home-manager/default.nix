@@ -21,5 +21,6 @@
     ./programs/obs.nix
     ./programs/zellij.nix
     ./programs/zen-browser.nix
+    ./services/syncthing.nix
   ];
 }

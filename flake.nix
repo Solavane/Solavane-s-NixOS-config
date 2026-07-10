@@ -50,6 +50,7 @@
 	          sharedModules = [ 
               ./modules/home-manager/default.nix 
               nix-flatpak.homeManagerModules.nix-flatpak 
+              sops-nix.homeManagerModules.sops
             ];
 	          extraSpecialArgs = { inherit inputs; };
 	        };
