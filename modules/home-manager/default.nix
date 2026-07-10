@@ -11,6 +11,7 @@
     ./desktop/shell.nix
     ./programs/default.nix
     ./programs/blender.nix
+    ./programs/btop.nix
     ./programs/fastfetch.nix
     ./programs/godot.nix
     ./programs/keepass.nix

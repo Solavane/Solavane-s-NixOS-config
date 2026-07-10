@@ -23,7 +23,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     nitch
-    htop
     p7zip
     p7zip-rar
     wget
