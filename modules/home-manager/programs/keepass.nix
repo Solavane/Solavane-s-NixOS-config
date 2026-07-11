@@ -29,7 +29,7 @@ in
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "ColorPasswords" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "CompactMode" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "HidePasswords" "true"
-        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeOnStartup" "false"
+        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeOnStartup" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeOnClose" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "MinimizeToTray" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "ShowTrayIcon" "true"

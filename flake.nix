@@ -14,7 +14,7 @@
     };
     
     mango = {
-      url = "github:mangowm/mango?ref=wl-only";
+      url = "github:mangowm/mango"; #?ref=wl-only
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
