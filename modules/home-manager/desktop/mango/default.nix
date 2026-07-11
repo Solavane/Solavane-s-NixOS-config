@@ -33,7 +33,7 @@ in
     '';
 
     xdg.configFile."mango/env.conf".text = ''
-      
+      env=WLR_RENDERER,vulkan
     '';
 
     xdg.configFile."mango/monitors.conf".text = monitors;

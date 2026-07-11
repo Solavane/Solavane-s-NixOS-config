@@ -15,6 +15,9 @@ let
     # Check these out at about:config
     "zen.welcome-screen.seen" = true;
     "browser.shell.checkDefaultBrowser" = false;
+
+    # HDR
+    "gfx.color_management.native_srgb" = true;
     
     #################################
     # Hardening (Security settings) #

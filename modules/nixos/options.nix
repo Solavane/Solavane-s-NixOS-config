@@ -39,15 +39,19 @@
     # System-level programs
     # ----------------------------------------------------------
     programs = {
-      kitty.enable     = lib.mkEnableOption "Kitty terminal";
-      foot.enable      = lib.mkEnableOption "Foot lightweight terminal";
-      pcmanfm.enable   = lib.mkEnableOption "pcmanfm file browser";
-      librewolf.enable = lib.mkEnableOption "LibreWolf browser";
-      localsend.enable = lib.mkEnableOption "easilly send files on local wifi";
-      elinks.enable    = lib.mkEnableOption "Elinks text based browser";
-      vesktop.enable   = lib.mkEnableOption "Vesktop Discord client";
-      steam.enable     = lib.mkEnableOption "Steam game launcher client";
-      faugus.enable    = lib.mkEnableOption "faugus games launcher";
+      kitty.enable      = lib.mkEnableOption "Kitty terminal";
+      foot.enable       = lib.mkEnableOption "Foot lightweight terminal";
+      pcmanfm.enable    = lib.mkEnableOption "pcmanfm file browser";
+      librewolf.enable  = lib.mkEnableOption "LibreWolf browser";
+      localsend.enable  = lib.mkEnableOption "easilly send files on local wifi";
+      elinks.enable     = lib.mkEnableOption "Elinks text based browser";
+      vesktop.enable    = lib.mkEnableOption "Vesktop Discord client";
+      steam.enable      = lib.mkEnableOption "Steam game launcher client";
+      faugus.enable     = lib.mkEnableOption "faugus games launcher";
+    };
+
+    services = {
+      ollama.enable     = lib.mkEnableOption "Local LLM handeling";
     };
 
     # ----------------------------------------------------------

@@ -11,6 +11,7 @@
     ./programs/pcmanfm.nix
     ./programs/steam.nix
     ./core/nvidia.nix
+    ./services/ollama.nix
     ./services/pipewire.nix
   ];
 }
