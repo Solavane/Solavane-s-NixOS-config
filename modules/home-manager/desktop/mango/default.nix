@@ -18,6 +18,11 @@ in
       #THIS WILL CAUSE PROBLEMS IF FILE OR PROJECT IS MOVED IN ANY WAY, Also config file folder must be called nixconfig
     };
 
+    xdg.configFile."mango/rules.conf" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixconfig/modules/home-manager/desktop/mango/rules.conf"; 
+      #THIS WILL CAUSE PROBLEMS IF FILE OR PROJECT IS MOVED IN ANY WAY, Also config file folder must be called nixconfig
+    };
+
     xdg.configFile."mango/scripts" = {
       source = ./scripts;
       recursive = true;
@@ -33,7 +38,7 @@ in
     '';
 
     xdg.configFile."mango/env.conf".text = ''
-      
+
     '';
 
     xdg.configFile."mango/monitors.conf".text = monitors;
