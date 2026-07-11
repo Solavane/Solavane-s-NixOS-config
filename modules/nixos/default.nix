@@ -9,6 +9,7 @@
     ./programs/default.nix
     ./programs/localsend.nix
     ./programs/pcmanfm.nix
+    ./programs/sillytavern.nix
     ./programs/steam.nix
     ./core/nvidia.nix
     ./services/ollama.nix

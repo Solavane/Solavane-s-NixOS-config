@@ -40,6 +40,7 @@
       pcmanfm.enable = true;
       localsend.enable = true;
       vesktop.enable = true;
+      sillytavern.enable = true;
       steam.enable = true;
       faugus.enable = true;
 

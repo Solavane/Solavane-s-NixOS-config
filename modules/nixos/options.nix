@@ -21,37 +21,37 @@
     # Desktop environment modules
     # ----------------------------------------------------------
     desktop = {
-      #sddm.enable     = lib.mkEnableOption "Enables SDDM login screen";
-      hyprland.enable = lib.mkEnableOption "Hyprland compositor";
+      hyprland.enable       = lib.mkEnableOption "Hyprland compositor";
       mango = {
-        enable   = lib.mkEnableOption "Mango Wayland Compositor";
-        monitors = lib.mkOption {
-          type    = lib.types.listOf lib.types.str;
+        enable              = lib.mkEnableOption "Mango Wayland Compositor";
+        monitors            = lib.mkOption {
+          type              = lib.types.listOf lib.types.str;
           default = [];
         };
       };
-      shell.enable = lib.mkEnableOption "Custom barless shell built with eww and fuzzel";
+      shell.enable          = lib.mkEnableOption "Custom barless shell built with eww and fuzzel";
     };
 
-    sddm.enable       = lib.mkEnableOption "login manager";
+    sddm.enable             = lib.mkEnableOption "login manager";
 
     # ----------------------------------------------------------
     # System-level programs
     # ----------------------------------------------------------
     programs = {
-      kitty.enable      = lib.mkEnableOption "Kitty terminal";
-      foot.enable       = lib.mkEnableOption "Foot lightweight terminal";
-      pcmanfm.enable    = lib.mkEnableOption "pcmanfm file browser";
-      librewolf.enable  = lib.mkEnableOption "LibreWolf browser";
-      localsend.enable  = lib.mkEnableOption "easilly send files on local wifi";
-      elinks.enable     = lib.mkEnableOption "Elinks text based browser";
-      vesktop.enable    = lib.mkEnableOption "Vesktop Discord client";
-      steam.enable      = lib.mkEnableOption "Steam game launcher client";
-      faugus.enable     = lib.mkEnableOption "faugus games launcher";
+      kitty.enable          = lib.mkEnableOption "Kitty terminal";
+      foot.enable           = lib.mkEnableOption "Foot lightweight terminal";
+      pcmanfm.enable        = lib.mkEnableOption "pcmanfm file browser";
+      librewolf.enable      = lib.mkEnableOption "LibreWolf browser";
+      localsend.enable      = lib.mkEnableOption "easilly send files on local wifi";
+      sillytavern.enable    = lib.mkEnableOption "LLM frontend with poweruser features";
+      elinks.enable         = lib.mkEnableOption "Elinks text based browser";
+      vesktop.enable        = lib.mkEnableOption "Vesktop Discord client";
+      steam.enable          = lib.mkEnableOption "Steam game launcher client";
+      faugus.enable         = lib.mkEnableOption "faugus games launcher";
     };
 
     services = {
-      ollama.enable     = lib.mkEnableOption "Local LLM handeling";
+      ollama.enable         = lib.mkEnableOption "Local LLM handeling";
     };
 
     # ----------------------------------------------------------
