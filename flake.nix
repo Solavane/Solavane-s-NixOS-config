@@ -43,7 +43,7 @@
     };
   };
 
-  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, sops-nix, ... }@inputs:
+  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, sops-nix, disko, ... }@inputs:
   let
     mkHost = hostname: system: { desktop ? false }: nixpkgs.lib.nixosSystem {
       inherit system;
@@ -51,6 +51,7 @@
       modules = [
         ./hosts/${hostname}/default.nix
         ./modules/nixos/default.nix
+        disko.nixosModules.disko
 
         ({ config, ... }: {
           nixconf.isDesktop = nixpkgs.lib.mkDefault desktop;
@@ -78,7 +79,7 @@
       PC            = mkHost "PC"           "x86_64-linux"  { desktop = true; };
       old-laptop    = mkHost "old-laptop"   "x86_64-linux"  { desktop = true; };
       dell-laptop   = mkHost "dell-laptop"  "x86_64-linux"  { desktop = true; };
-      oracle-vps    = mkHost "oracle-vps"   "aarch64-linux";
+      oracle-vps    = mkHost "oracle-vps"   "aarch64-linux" {  };
     };
   };
 }

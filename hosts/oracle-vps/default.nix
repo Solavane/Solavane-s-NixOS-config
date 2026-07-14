@@ -3,12 +3,20 @@
     ../shared/default.nix
     ../../users/solavane/default.nix
     ./system-configuration.nix
+    ./disko.nix
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
-  users.users.root.openssh.authorizedKeys.keyFiles = [
-    ./oracle_vps.pub
-  ];
+  users = {
+    mutableUsers = false;
+    users.solavane = {
+      openssh.authorizedKeys.keys = [
+        ./oracle_vps.pub
+      ];
+    };
+  };
+
+  systemd.targets.multi-user.enable = true;
 
   home-manager.users = { # :Imports for user HMs
     
@@ -22,6 +30,7 @@
   };
 
   networking.hostName = "oracle-vps";
+  networking.networkmanager.enable = true;
 
   nixconf = { #Module imports    
     services = {
