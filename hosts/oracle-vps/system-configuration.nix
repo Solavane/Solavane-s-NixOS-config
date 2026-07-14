@@ -30,7 +30,7 @@
   # Enable passwordless sudo.
   security.sudo.extraRules = [
     {
-      users = [ solavane ];
+      users = [ "solavane" ];
       commands = [
         {
           command = "ALL";
