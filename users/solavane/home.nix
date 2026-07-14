@@ -50,6 +50,8 @@
     };
   };
 
+  programs.ssh.enable = true;
+
   ###############################################################
   # Move this to shared home once I have the energy to fix that #
   ###############################################################
