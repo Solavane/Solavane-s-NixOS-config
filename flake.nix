@@ -21,6 +21,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     mango = {
       url = "github:mangowm/mango"; #?ref=wl-only
@@ -70,9 +75,10 @@
     };
   in {
     nixosConfigurations = {
-      PC           = mkHost "PC"           "x86_64-linux" { desktop = true; };
-      old-laptop   = mkHost "old-laptop"   "x86_64-linux" { desktop = true; };
-      dell-laptop  = mkHost "dell-laptop"  "x86_64-linux" { desktop = true; };
+      PC            = mkHost "PC"           "x86_64-linux"  { desktop = true; };
+      old-laptop    = mkHost "old-laptop"   "x86_64-linux"  { desktop = true; };
+      dell-laptop   = mkHost "dell-laptop"  "x86_64-linux"  { desktop = true; };
+      oracle-vps    = mkHost "oracle-vps"   "aarch64-linux";
     };
   };
 }
