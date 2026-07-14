@@ -10,12 +10,12 @@
   users = {
     mutableUsers = false;
     users.solavane = {
-      openssh.authorizedKeys.keys = [
+      openssh.authorizedKeys.keyFiles = [
         ./oracle_vps.pub
       ];
     };
     users.root = {
-      openssh.authorizedKeys.keys = [
+      openssh.authorizedKeys.keyFiles = [
         ./oracle_vps.pub
       ];
     };
