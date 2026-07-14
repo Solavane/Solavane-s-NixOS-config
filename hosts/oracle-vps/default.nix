@@ -14,6 +14,11 @@
         ./oracle_vps.pub
       ];
     };
+    users.root = {
+      openssh.authorizedKeys.keys = [
+        ./oracle_vps.pub
+      ];
+    };
   };
 
   systemd.targets.multi-user.enable = true;
