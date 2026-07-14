@@ -4,14 +4,18 @@
   system.stateVersion = "25.11";
 
   # Bootloader.
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    device = "nodev";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
+    initrd.systemd.enable = true;
   };
 
-  boot.initrd.availableKernelModules = [ "nvme" "virtio_pci" "virtio_scsi" "xhci_pci" ];
+  boot.initrd.availableKernelModules = [ "nvme" "virtio_pci" "virtio_scsi" "usbhid" "xhci_pci" ];
 
   zramSwap = {
     enable = true;
@@ -23,7 +27,24 @@
     settings.PermitRootLogin = "prohibit-password";
   };
 
+  # Enable passwordless sudo.
+  security.sudo.extraRules = [
+    {
+      users = [ solavane ];
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
+
+  # Disable documentation for minimal install.
+  documentation.enable = false;
+
   networking.useDHCP = lib.mkDefault true;
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }
