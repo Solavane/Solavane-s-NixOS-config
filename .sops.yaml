@@ -2,6 +2,7 @@ keys:
   - &pc           age1e2s40hfvrtaete3gfpx49mglee8dlupf264hy8my3s5ffwy4h5zqhhczg2
   - &dell-laptop  age1cdc6gaqvrdhrkejtn44k56f2jr6exqpfun6qlspekzlllq4xhd4spphwg4
   #- &old-laptop   age1
+  - &oracle-vps   age1zrhel7uergxsl8yfpzy8hz028m7dhms0pyvexfwguxyh0mcsfpxqm4z80k
   - &solavane     age1j76nztt2puqjec70yue4qj7s089sw4c365zpjjf3ukqjjhe65uyqcepfag 
 
 creation_rules:
@@ -11,5 +12,6 @@ creation_rules:
   - path_regex: users/solavane/secrets\.yaml$
     key_groups:
       - age: [*pc, *dell-laptop, *solavane]
-
-
+  - path_regex: hosts/oracle-vps/secrets\.yaml$
+    key_groups:
+      - age: [*oracle-vps, *solavane]

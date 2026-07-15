@@ -1,4 +1,4 @@
-{ config, osConfig, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 let
   cfg = config.nixconf.hosting.minecraft-servers;

@@ -13,6 +13,7 @@
     ./programs/blender.nix
     ./programs/btop.nix
     ./programs/fastfetch.nix
+    ./programs/element.nix
     ./programs/godot.nix
     ./programs/keepass.nix
     ./programs/prismlauncher.nix

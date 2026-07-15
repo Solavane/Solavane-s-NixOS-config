@@ -51,10 +51,19 @@
     };
 
     hosting = {
+      domain                = lib.mkOption {
+        type                = lib.types.str;
+        default = [];
+      };
+      ddns.enable           = lib.mkEnableOption "Enable Cloudflare Dynamic DNS updating";
+      matrix = {
+        enable              = lib.mkEnableOption "selfhosted discord replacement";
+      };
       minecraft-servers = {
         enable              = lib.mkEnableOption "Allows host to run minecraft servers";
         fjomp.enable        = lib.mkEnableOption "Server with brother";
       };
+      webserver.enable      = lib.mkEnableOption "enables domain webserver";
     };
 
     services = {

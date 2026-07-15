@@ -1,4 +1,10 @@
 { config, lib, pkgs, modulesPath,... }: {
+
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    age.keyFile = "/var/lib/sops-nix/key.txt";
+  };
+
   imports = [
     ../shared/default.nix
     ../../users/solavane/default.nix
@@ -39,6 +45,11 @@
 
   nixconf = { #Module imports    
     hosting = {
+      domain = "solavane.fyi";
+      webserver.enable = true;
+      ddns.enable = true;
+      matrix.enable = true;
+      
       minecraft-servers = {
         enable = true;
         fjomp.enable = true;

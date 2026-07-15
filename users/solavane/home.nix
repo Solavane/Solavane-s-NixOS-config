@@ -14,6 +14,7 @@
   nixconf = {
     
     programs = {
+      element.enable = true;
       keepass.enable = true;
       zellij.enable = true;
       zen-browser = {
