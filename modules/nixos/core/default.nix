@@ -43,6 +43,7 @@
   programs = {
     git.enable  = true;
     zsh.enable  = true;
+    tmux.enable = true;
 
     
     nh = {

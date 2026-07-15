@@ -14,24 +14,20 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stable-nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
     mango = {
       url = "github:mangowm/mango"; #?ref=wl-only
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,9 +37,13 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, sops-nix, disko, ... }@inputs:
+  outputs = { nixpkgs, stable-nixpkgs, nix-flatpak, home-manager, nix-minecraft, sops-nix, disko, ... }@inputs:
   let
     mkHost = hostname: system: { desktop ? false }: nixpkgs.lib.nixosSystem {
       inherit system;
@@ -52,6 +52,10 @@
         ./hosts/${hostname}/default.nix
         ./modules/nixos/default.nix
         disko.nixosModules.disko
+        nix-minecraft.nixosModules.minecraft-servers
+        {
+          nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+        }
 
         ({ config, ... }: {
           nixconf.isDesktop = nixpkgs.lib.mkDefault desktop;

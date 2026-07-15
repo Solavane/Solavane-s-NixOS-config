@@ -38,6 +38,13 @@
   networking.networkmanager.enable = true;
 
   nixconf = { #Module imports    
+    hosting = {
+      minecraft-servers = {
+        enable = true;
+        fjomp.enable = true;
+      };
+    };
+
     services = {
       
     };

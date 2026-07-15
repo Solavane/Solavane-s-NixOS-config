@@ -50,6 +50,13 @@
       faugus.enable         = lib.mkEnableOption "faugus games launcher";
     };
 
+    hosting = {
+      minecraft-servers = {
+        enable              = lib.mkEnableOption "Allows host to run minecraft servers";
+        fjomp.enable        = lib.mkEnableOption "Server with brother";
+      };
+    };
+
     services = {
       ollama.enable         = lib.mkEnableOption "Local LLM handeling";
     };

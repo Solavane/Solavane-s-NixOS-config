@@ -12,6 +12,7 @@
     ./programs/sillytavern.nix
     ./programs/steam.nix
     ./core/nvidia.nix
+    ./hosting/minecraft/default.nix
     ./services/ollama.nix
     ./services/pipewire.nix
   ];
