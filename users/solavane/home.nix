@@ -52,5 +52,5 @@
   # Move this to shared home once I have the energy to fix that #
   ###############################################################
 
-  xdg.autostart.enable = true;
+  # xdg.autostart.enable = true;
 }
