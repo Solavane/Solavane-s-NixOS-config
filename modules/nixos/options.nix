@@ -64,6 +64,7 @@
         fjomp.enable        = lib.mkEnableOption "Server with brother";
       };
       webserver.enable      = lib.mkEnableOption "enables domain webserver";
+      homepage.enable       = lib.mkEnableOption "Server Monitor";
     };
 
     services = {

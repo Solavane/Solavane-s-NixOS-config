@@ -49,6 +49,7 @@
       webserver.enable = true;
       ddns.enable = true;
       matrix.enable = true;
+      homepage.enable = true;
       
       minecraft-servers = {
         enable = true;

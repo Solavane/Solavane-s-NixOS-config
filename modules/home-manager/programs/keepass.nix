@@ -35,6 +35,7 @@ in
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "GUI" "ShowTrayIcon" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "Browser" "Enabled" "true"
         ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "Security" "IconDownloadFallback" "true"
+        ${pkgs.crudini}/bin/crudini --set "$CONFIG_FILE" "FdoSecrets" "Enabled" "true"
       '';
     };
   };

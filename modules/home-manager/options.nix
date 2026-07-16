@@ -8,7 +8,7 @@
       blender.enable        = lib.mkEnableOption "Studio level 3d program";
       prismlauncher.enable  = lib.mkEnableOption "minecraft prism launcher";
       cataclysm-dda.enable  = lib.mkEnableOption "Cataclysm: Dark Days Ahead game";
-      element.enable     = lib.mkEnableOption "matrix chat client";
+      element.enable        = lib.mkEnableOption "matrix chat client";
       godot.enable          = lib.mkEnableOption "Godot game engine";
       keepass.enable        = lib.mkEnableOption "local password manager";
       obs.enable            = lib.mkEnableOption "OBS Studio screen recording and streaming";

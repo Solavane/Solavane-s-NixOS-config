@@ -5,9 +5,6 @@ let
 in
 {
   config = lib.mkIf (osConfig.nixconf.isDesktop && cfg.enable) {
-
-    programs.element-desktop = {
-      enable = true;
-    };
+    programs.element-desktop.enable = true;
   };
 }

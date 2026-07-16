@@ -16,6 +16,7 @@
     ./hosting/matrix/default.nix
     ./hosting/minecraft/default.nix
     ./hosting/webserver/default.nix
+    ./hosting/homepage.nix
     ./services/ollama.nix
     ./services/pipewire.nix
   ];
