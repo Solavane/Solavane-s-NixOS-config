@@ -22,6 +22,7 @@
   nixconf = { #Module imports
     
     desktop = {
+      attract-mode.enable = true;
 
       mango = {
         enable = true;

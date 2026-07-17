@@ -3,6 +3,7 @@
     ./options.nix
     ./core/default.nix
     ./system/sddm.nix
+    ./system/desktop/attract-mode.nix
     ./system/desktop/hyprland.nix
     ./system/desktop/mango.nix
     ./system/desktop/shell.nix

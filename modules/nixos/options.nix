@@ -21,6 +21,7 @@
     # Desktop environment modules
     # ----------------------------------------------------------
     desktop = {
+      attract-mode.enable          = lib.mkEnableOption "Retro games emulation session";
       hyprland.enable       = lib.mkEnableOption "Hyprland compositor";
       mango = {
         enable              = lib.mkEnableOption "Mango Wayland Compositor";
