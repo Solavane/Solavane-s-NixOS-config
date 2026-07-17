@@ -2,6 +2,7 @@
   imports = [
     ./options.nix
     ./core/default.nix
+    ./system/plymouth.nix
     ./system/sddm.nix
     ./system/desktop/attract-mode.nix
     ./system/desktop/hyprland.nix

@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.nixconf.desktop.hyprland;
+  cfg = config.nixconf.system.desktop.hyprland;
 in
 lib.mkIf (config.nixconf.isDesktop && cfg.enable) {
 

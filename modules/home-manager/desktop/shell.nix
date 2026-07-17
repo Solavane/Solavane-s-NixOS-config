@@ -1,7 +1,7 @@
 { pkgs, config, lib, osConfig, ... }:
 
 let
-  enabled = osConfig.nixconf.desktop.shell.enable;
+  enabled = osConfig.nixconf.system.desktop.shell.enable;
 in
 {
   config = lib.mkIf enabled {

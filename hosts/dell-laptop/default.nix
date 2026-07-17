@@ -21,18 +21,21 @@
 
   nixconf = { #Module imports
     
-    desktop = {
-      attract-mode.enable = true;
+    system = {
+      sddm.enable = true;
 
-      mango = {
-        enable = true;
-        monitors = [
-          "#make:AU Optronics, width:1366, height:768, refresh:60, x:0, y:0"
-        ];
+      desktop = {
+        attract-mode.enable = true;
+
+        mango = {
+          enable = true;
+          monitors = [
+            "#make:AU Optronics, width:1366, height:768, refresh:60, x:0, y:0"
+          ];
+        };
       };
     };
 
-    sddm.enable = true;
 
     programs = {
 

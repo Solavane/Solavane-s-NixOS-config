@@ -1,8 +1,8 @@
 { config, lib, osConfig, ... }:
 
 let
-  enabled = osConfig.nixconf.desktop.mango.enable;
-  monitors = lib.concatMapStrings (m: "monitorrule=${m}\n") osConfig.nixconf.desktop.mango.monitors;
+  enabled = osConfig.nixconf.system.desktop.mango.enable;
+  monitors = lib.concatMapStrings (m: "monitorrule=${m}\n") osConfig.nixconf.system.desktop.mango.monitors;
 
 in
 {

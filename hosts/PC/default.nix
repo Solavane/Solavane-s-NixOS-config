@@ -21,19 +21,21 @@
 
   nixconf = { #Module imports
     nvidia.enable = true;
-    sddm.enable = true;
-    
-    desktop = {
 
-      mango = {
-        enable = true;
-        monitors = [
-          "name:DP-1,     width:2560, height:1440, refresh:240, x:2560, y:0, vrr:0, rr:0 :hdr:1"
-          "name:HDMI-A-1, width:2560, height:1440, refresh:120, x:0,    y:0"
-        ];
+    system = { 
+      sddm.enable = true;
+
+      desktop = {
+
+        mango = {
+          enable = true;
+          monitors = [
+            "name:DP-1,     width:2560, height:1440, refresh:240, x:2560, y:0, vrr:0, rr:0 :hdr:1"
+            "name:HDMI-A-1, width:2560, height:1440, refresh:120, x:0,    y:0"
+          ];
+        };
+
       };
-
-    };
     programs = {
 
       foot.enable = true;

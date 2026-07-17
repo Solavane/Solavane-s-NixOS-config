@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 
 let
-  cfg = config.nixconf.desktop.shell;
+  cfg = config.nixconf.system.desktop.shell;
 in
 lib.mkIf (config.nixconf.isDesktop && cfg.enable) {
   

@@ -20,20 +20,30 @@
     # ----------------------------------------------------------
     # Desktop environment modules
     # ----------------------------------------------------------
-    desktop = {
-      attract-mode.enable          = lib.mkEnableOption "Retro games emulation session";
-      hyprland.enable       = lib.mkEnableOption "Hyprland compositor";
-      mango = {
-        enable              = lib.mkEnableOption "Mango Wayland Compositor";
-        monitors            = lib.mkOption {
-          type              = lib.types.listOf lib.types.str;
-          default = [];
+    system = {
+
+      plymouth = {
+        enable              = lib.mkEnableOption "Boot animation";
+        theme               = lib.mkOption {
+          type              = lib.types.str;
+          default = "solar";
         };
       };
-      shell.enable          = lib.mkEnableOption "Custom barless shell built with eww and fuzzel";
+      sddm.enable           = lib.mkEnableOption "login manager";
+      
+      desktop = {
+        attract-mode.enable = lib.mkEnableOption "Retro games emulation session";
+        hyprland.enable     = lib.mkEnableOption "Hyprland compositor";
+        mango = {
+          enable            = lib.mkEnableOption "Mango Wayland Compositor";
+          monitors          = lib.mkOption {
+            type            = lib.types.listOf lib.types.str;
+            default = [];
+          };
+        };
+        shell.enable        = lib.mkEnableOption "Custom barless shell built with eww and fuzzel";
+      };
     };
-
-    sddm.enable             = lib.mkEnableOption "login manager";
 
     # ----------------------------------------------------------
     # System-level programs
@@ -88,10 +98,10 @@
   config = let
     cfg = config.nixconf;
 
-    wmEnabled = cfg.desktop.hyprland.enable || cfg.desktop.mango.enable;
+    wmEnabled = cfg.system.desktop.hyprland.enable || cfg.system.desktop.mango.enable;
   in {
     
     # Enables shell if window manager is active
-    nixconf.desktop.shell.enable = lib.mkIf wmEnabled true;
+    nixconf.system.desktop.shell.enable = lib.mkIf wmEnabled true;
   };
 }

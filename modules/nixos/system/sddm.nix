@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 let
-  cfg = config.nixconf.sddm;
+  cfg = config.nixconf.system.sddm;
 in
 {
   config = lib.mkIf (config.nixconf.isDesktop && cfg.enable) {

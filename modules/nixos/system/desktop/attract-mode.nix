@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixconf.desktop.attract-mode;
+  cfg = config.nixconf.system.desktop.attract-mode;
 in
 lib.mkIf (config.nixconf.isDesktop && cfg.enable) {
   

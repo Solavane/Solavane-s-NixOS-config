@@ -1,7 +1,7 @@
 { config, lib, osConfig, ... }:
 
 let
-  enabled = osConfig.nixconf.isDesktop && osConfig.nixconf.desktop.hyprland.enable;
+  enabled = osConfig.nixconf.isDesktop && osConfig.nixconf.system.desktop.hyprland.enable;
 in
 lib.mkIf enabled {
 

@@ -21,17 +21,20 @@
 
   nixconf = { #Module imports
     
-    desktop = {
+    system = {
+      sddm.enable = true;
 
-      mango = {
-        enable = true;
-        monitors = [
-          "make:AU Optronics, width:1366, height:768, refresh:60, x:0, y:0"
-        ];
+      desktop = {
+
+        mango = {
+          enable = true;
+          monitors = [
+            "make:AU Optronics, width:1366, height:768, refresh:60, x:0, y:0"
+          ];
+        };
       };
     };
 
-    sddm.enable = true;
 
 
     programs = {
