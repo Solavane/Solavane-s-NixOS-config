@@ -25,7 +25,7 @@
       sddm.enable = true;
 
       desktop = {
-        attract-mode.enable = true;
+        #attract-mode.enable = true;
 
         mango = {
           enable = true;

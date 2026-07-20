@@ -9,6 +9,8 @@
     ./desktop/eww.nix
     ./desktop/rofi.nix
     ./desktop/shell.nix
+    ./desktop/theming/default.nix
+    ./desktop/theming/matugen/default.nix
     ./programs/default.nix
     ./programs/blender.nix
     ./programs/btop.nix

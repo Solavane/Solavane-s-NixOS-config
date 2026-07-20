@@ -44,7 +44,7 @@
     git.enable  = true;
     zsh.enable  = true;
     tmux.enable = true;
-
+    dconf.enable = true;
     
     nh = {
       enable = true;

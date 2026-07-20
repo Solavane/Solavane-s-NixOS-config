@@ -24,7 +24,7 @@ in {
     settings = {
       main = {
         font = "JetBrainsMono Nerd Font:size=11";
-
+        include = "~/.config/foot/theme.ini";
       };
     };
   };
