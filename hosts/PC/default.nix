@@ -36,6 +36,7 @@
         };
 
       };
+    };
     programs = {
 
       foot.enable = true;
