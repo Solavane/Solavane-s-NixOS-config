@@ -47,7 +47,17 @@
     };
   };
 
-  programs.ssh.enable = true;
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "oracle-vps" = {
+        hostname = "158.179.200.211";
+        user = "solavane";
+        identityFile = "~/.ssh/oracle_vps";
+        identitiesOnly = true;
+      };
+    };
+  };
 
   ###############################################################
   # Move this to shared home once I have the energy to fix that #

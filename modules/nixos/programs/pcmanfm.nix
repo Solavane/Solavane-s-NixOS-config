@@ -11,8 +11,10 @@ in
       xarchiver
     ];
 
-    services.udisks2.enable = true;
-    services.devmon.enable = true;
-  
+    services = {
+      udisks2.enable = true;
+      devmon.enable = true;
+      gvfs.enable = true;
+    };
   };
 }

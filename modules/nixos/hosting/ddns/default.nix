@@ -8,7 +8,10 @@ in
     sops.secrets."domainAPI" = { };
     services.cloudflare-dyndns = {
       enable = true;
-      domains = [ config.nixconf.hosting.domain ];
+      domains = [ 
+        config.nixconf.hosting.domain
+        "fjomp.${config.nixconf.hosting.domain}"
+      ];
       apiTokenFile = config.sops.secrets."domainAPI".path;
     };
   };

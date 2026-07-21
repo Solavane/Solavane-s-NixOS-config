@@ -24,6 +24,7 @@ in
         max-players = 3;
         white-list = true;
         allow-cheats = false;
+        level-name = "fjomp";
       };
       jvmOpts = "-XX:+UnlockExperimentalVMOptions -Xms2G -Xmx4G -Djava.net.preferIPv4Stack=true -XX:+UseZGC -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+UseCompactObjectHeaders";
 
