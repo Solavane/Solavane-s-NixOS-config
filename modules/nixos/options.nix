@@ -73,6 +73,7 @@
       minecraft-servers = {
         enable              = lib.mkEnableOption "Allows host to run minecraft servers";
         fjomp.enable        = lib.mkEnableOption "Server with brother";
+        gtnh.enable         = lib.mkEnableOption "very long expert minecraft modpack";
       };
       webserver.enable      = lib.mkEnableOption "enables domain webserver";
       homepage.enable       = lib.mkEnableOption "Server Monitor";

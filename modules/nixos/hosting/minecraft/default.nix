@@ -6,6 +6,7 @@ in
 {
   imports = [
     ./fjomp/default.nix
+    ./gtnh/default.nix
   ];
 
   config = lib.mkIf cfg.enable {

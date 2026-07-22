@@ -54,6 +54,7 @@
       minecraft-servers = {
         enable = true;
         fjomp.enable = true;
+        gtnh.enable = true;
       };
     };
 
