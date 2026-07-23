@@ -15,7 +15,8 @@ in
         jre_headless = pkgs.jdk25_headless;
       };
       whitelist = { #doxing my MC acc lmao
-        Solavane = "12c603b6-d15c-4ae9-8357-6a1dc630d5d1";
+        Solavane  = "12c603b6-d15c-4ae9-8357-6a1dc630d5d1";
+        pjupp44   = "51a00d51-2001-49b1-8ea4-12c505ad1ac7";
       };
       serverProperties = {
         server-port = 43029;
